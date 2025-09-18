@@ -25,7 +25,7 @@ def create_repo(repo_name):
     url = f"{GITHUB_API}/orgs/{ORG_NAME}/repos"
     data = {
         "name": repo_name,
-        "private": False,  # можно True, если нужны приватные
+        "private": True,  # можно True, если нужны приватные
         "auto_init": False
     }
 
@@ -71,9 +71,10 @@ def main():
             repo_name = f"ya.{folder}"
 
             # Создание репозитория
-            if create_repo(repo_name):
+            #if create_repo(repo_name):
+            create_repo(repo_name)
                 # Пуш содержимого
-                push_folder_to_github(folder_path, repo_name)
+                #push_folder_to_github(folder_path, repo_name)
 
 if __name__ == "__main__":
     main()
