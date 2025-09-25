@@ -2,7 +2,7 @@ import os
 import subprocess
 
 # Путь к корневой папке
-base_path = r"x:\.trash\ya"
+base_path = r"x:\.trash\ya\WAITING_POOLING"
 
 # Обходим все подпапки
 for root, dirs, files in os.walk(base_path):
