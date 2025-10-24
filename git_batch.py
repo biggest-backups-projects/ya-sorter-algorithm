@@ -133,7 +133,7 @@ def main():
                 continue
 
         # --- git push
-        push_res = run_git(["push", "-u", "origin", "main"], cwd=repo_root)
+        push_res = run_git(["push"], cwd=repo_root)
         combined_push = (push_res.stdout or "") + "\n" + (push_res.stderr or "")
 
         if push_res.returncode != 0:
