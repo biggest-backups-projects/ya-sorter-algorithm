@@ -77,8 +77,12 @@ def main():
     entries = sorted(os.listdir(target_path))
     dirs = [
         d for d in entries
-        if os.path.isdir(os.path.join(target_path, d)) and d != ".git"
+        if os.path.isdir(os.path.join(target_path, d)) and d != ".git" and d != "github" and d != "infra"
     ]
+
+    #if(not os.path.isdir(target_path + "/.git")):
+    #    run_git(["init"], cwd=repo_root)
+    #    run_git(["remote", "add", "origin", "https://github.com/biggest-backups-projects/ya."], cwd=repo_root)
 
     logging.info(f"Найдено директорий (без .git): {len(dirs)} в {target_path}")
 
